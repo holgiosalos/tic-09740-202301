@@ -1,2 +1,3 @@
-# tic-09740-202301
-Repositorio para la materia de Técnicas de evaluación de calidad del Software 
+# Técnicas de Evaluación de Calidad del Software
+
+Repositorio para los ejercicios en clase de la materia
