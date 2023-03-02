@@ -1,0 +1,25 @@
+{
+  "name": "cypress-exercise",
+  "version": "1.0.0",
+  "description": "This is a Workshop about Cypress",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/holgiosalos/tic-09740-202301.git"
+  },
+  "keywords": [
+    "ui-testing",
+    "dojo",
+    "practice",
+    "cypress"
+  ],
+  "author": "Holmes Salazar []\u001b[Dhgsosorio@gmail]",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/holgiosalos/tic-09740-202301/issues"
+  },
+  "homepage": "https://github.com/holgiosalos/tic-09740-202301#readme"
+}
