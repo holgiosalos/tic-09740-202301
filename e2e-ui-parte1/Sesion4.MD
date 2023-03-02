@@ -109,7 +109,7 @@ Una vez hemos ejecutado las pruebas de ejemplo, eliminamos las carpetas que cont
    });
    ```
 
-2. Ejecutar el comando `npm run test:open` para correr la prueba (deberas seleccionar la opcion "E2E Testing" y despues seleccionar nuevamente el navegador chrome y presionar el boton "Start E2E Testing in Chrome"). Una vez finalice y si todo está bien veremos que la prueba paso satisfactoriamente:
+2. Ejecutar el comando `npm run test` para correr la prueba (deberas seleccionar la opcion "E2E Testing" y despues seleccionar nuevamente el navegador chrome y presionar el boton "Start E2E Testing in Chrome"). Una vez finalice y si todo está bien veremos que la prueba paso satisfactoriamente:
 
    ![google spec result browser](media/google-spec-result.png)
 
