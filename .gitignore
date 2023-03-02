@@ -328,4 +328,15 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+### CypressIO ###
+# gitignore template for the CypressIO, browser test framework
+# website: https://www.cypress.io/
+
+cypress/results/*
+cypress/reports/*
+cypress/screenshots/*
+cypress/videos/*
+cypress/e2e/1-getting-started/*
+cypress/e2e/2-advanced-examples/*
+
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,chocolatey,node,java,intellij,windows
