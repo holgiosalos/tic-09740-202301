@@ -109,7 +109,7 @@ Una vez hemos ejecutado las pruebas de ejemplo, eliminamos las carpetas que cont
    });
    ```
 
-2. Ejecutar el comando `npm run test:open` para correr la prueba (deberas seleccionar la opcion "E2E Testing" y despues seleccionar nuevamente el navegador chrome y presionar el boton "Start E2E Testing in Chrome"). Una vez finalice y si todo está bien veremos que la prueba paso satisfactoriamente:
+2. Ejecutar el comando `npm run test` para correr la prueba (deberas seleccionar la opcion "E2E Testing" y despues seleccionar nuevamente el navegador chrome y presionar el boton "Start E2E Testing in Chrome"). Una vez finalice y si todo está bien veremos que la prueba paso satisfactoriamente:
 
    ![google spec result browser](media/google-spec-result.png)
 
@@ -130,13 +130,14 @@ Las pruebas que realizaremos se centraran en el proceso de Autenticacion.
 1. La primera prueba que realizaremos, es verificar el proceso de login, con usuario incorrecto. Encuentra los selectores indicados para los campos de usuario y contraseña, asi como para el boton de "Login"
    ```javascript
    describe("Verifying Login Process for SauceDemo", () => {
-     before(() => {
+     beforeEach(() => {
+       cy.clearCookies();
        cy.visit("https://www.saucedemo.com/");
      });
 
      it("Login should notify when a wrong username/password combination is used.", () => {
        cy.get("locator-for-username").type("testUser");
-       cy.get("locator-for-username").type("testPass");
+       cy.get("locator-for-password").type("testPass");
        cy.get("locator-for-login").click();
 
        // Assertion for error message
@@ -147,11 +148,27 @@ Las pruebas que realizaremos se centraran en el proceso de Autenticacion.
    });
    ```
 
+   <details>
+   <summary><b><u>Nota:</u></b> Si tienes problemas con la ejecucion de las pruebas en esta pagina, te sale un mensaje de error de timeout</summary>
+
+   Modifica la configuracion para e2e del archivo: `cypress.config.js`
+
+   ```javascript
+   e2e: {
+     chromeWebSecurity: false,
+     setupNodeEvents(on, config) {
+       // implement node event listeners here
+     },
+   },
+   ```
+
+   </details>
+
 1. La segunda prueba, consistira en verificar que podemos ingresar con el usuario "standard_user". Agrega este codigo dentro del bloque de `describe` ya existente.
    ```javascript
      it("Login should work for existing user.", () => {
        cy.get("locator-for-username").type("standard_user");
-       cy.get("locator-for-username").type("secret_sauce");
+       cy.get("locator-for-password").type("secret_sauce");
        cy.get("locator-for-login").click();
 
        // Assertion that verifies that products list is displayed
