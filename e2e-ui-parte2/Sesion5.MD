@@ -1,4 +1,4 @@
-# Sesion 4: Page Object Model con Cypress
+# Sesion 5: Page Object Model con Cypress
 
 ## Objetivo
 Este ejercicio tiene como objetivo aprender a implementar el patron de diseño "Page Object Model" para pruebas de UI.
