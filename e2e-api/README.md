@@ -234,6 +234,54 @@ En esta sección se realizarán pruebas al API de GitHub, en donde se consultar�
     ```
 1. Subir los cambios a GitHub, crear un PR y solicitar revisión
 
+### 6. Activar Debug en VS Code
+
+Puede elegir una de las siguientes opciones:
+1. **Opcion 1:** Para activar el debug con pruebas ejecutadas en mocha:
+   - Clic en el item del menu lateral izquierdo llamado "Run and Debug"
+   - Clic en la opcion "Create a launch.json"
+   - Elejir Node.js
+   - Se creara un archivo llamado `launch.json` en el directorio `.vscode`
+   - Clic en el boton "Add configuration"
+   - Agregar la opcion que dice "Node.js: Mocha Tests"
+   - En los argumentos pasados en la propiedad "args" reemplace tdd por bdd.
+
+2. **Opcion 2:** En la raiz del proyecto:
+   - Crear una carpeta llamada `.vscode`
+   - Dentro de esa carpeta, crear el archivo `launch.json`
+   - Copiar y pegar el siguiente contenido
+
+      ```json
+      {
+          // Use IntelliSense to learn about possible attributes.
+          // Hover to view descriptions of existing attributes.
+          // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+          "version": "0.2.0",
+          "configurations": [
+              {
+                  "args": [
+                      "-u",
+                      "bdd",
+                      "--timeout",
+                      "999999",
+                      "--colors",
+                      "${workspaceFolder}/test"
+                  ],
+                  "internalConsoleOptions": "openOnSessionStart",
+                  "name": "Mocha Tests",
+                  "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
+                  "request": "launch",
+                  "skipFiles": [
+                      "<node_internals>/**"
+                  ],
+                  "type": "node"
+              }
+          ]
+      }
+      ```
+
+3. Después, puede agregar breakpoints en los archivos de prueba que necesite.
+
 ## Tarea
 
 Ahora que ya sabemos como realizar peticiones http, incluyendo como hacer autenticaciones con la API de GitHub. Vamos a automatizar un flujo de negocio, en este caso, realizaremos un conjunto de pruebas automaticas que verifiquen el funcionamiento de la [API de Issues de GitHub](https://docs.github.com/en/rest/issues/issues?apiVersion=2022-11-28#about-issues).
