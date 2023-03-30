@@ -110,17 +110,21 @@ Dado que las pruebas de componentes tienen un enfoque shift-left se hace necesar
 
       ```yml
       spring:
-      datasource:
-         platform: h2
-         url: jdbc:h2:mem:pets;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
-         username: sa
-         password:
-         driverClassName: org.h2.Driver
+        datasource:
+          url: jdbc:h2:mem:pets;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+          username: sa
+          password:
+          driverClassName: org.h2.Driver
 
-      jpa:
-         database-platform: org.hibernate.dialect.H2Dialect
-         hibernate:
-            ddl-auto: create
+        sql:
+          init:
+            mode: never
+            platform: h2
+        
+        jpa:
+          database-platform: org.hibernate.dialect.H2Dialect
+          hibernate:
+            ddl-auto: create-drop
       ```
 
 ### 6. Creando la primera prueba de componentes
