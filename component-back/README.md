@@ -13,7 +13,7 @@ Dado que las pruebas de componentes tienen un enfoque shift-left se hace necesar
    - El repositorio del backend proporciona un docker-compose con las instrucciones necesarias para instalar un par de contenedores con postgreSQL y pgAdmin. Por ende, debe tener instalado Docker, bien sea usando Docker Desktop o Docker Engine.
    - Instalar localmente postgreSQL y pgAdmin.
 
-1. Realice un fork del nuevo back-end de la aplicación: [cats-shelter-backend](https://github.com/holgiosalos/cats-shelter-backend)
+1. Realice un fork del nuevo back-end de la aplicación: [cats-shelter-back](https://github.com/holgiosalos/cats-shelter-back)
 2. Si aun no lo tiene, Realice un fork del front-end de la aplicación: [cats-shelter-ui](https://github.com/holgiosalos/cats-shelter-ui)
 
 ### 2. Preparacion de la BD
