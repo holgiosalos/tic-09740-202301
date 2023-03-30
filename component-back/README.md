@@ -189,3 +189,38 @@ En esta primera prueba nos enfocaremos en la api de GET /animals. El objetivo se
       }
    }
    ```
+
+1. Ahora agregaremos una verificacion del response, comprobando el schema que retorna:
+
+   - Primero agregamos la dependencia que nos ayudara con la verificacion del schema:
+
+      ```groovy
+      testImplementation 'org.everit.json:org.everit.json.schema:1.0.0'
+      ```
+
+   - Despues agregamos el siguiente metodo a la clase `ListAnimalsTest.java`:
+
+      ```java
+      @Test
+      @SneakyThrows
+      public void listAnimalsWithRightSchema() {
+          var response = mockMvc.perform(get("/animals")).andReturn().getResponse();
+   
+          var jsonSchema = new JSONObject(new JSONTokener(ListAnimalsTest.class.getResourceAsStream("/animals.json")));
+          var jsonArray = new JSONArray(response.getContentAsString());
+   
+          var schema = SchemaLoader.load(jsonSchema);
+          schema.validate(jsonArray);
+      }
+      ```
+
+      **Nota:** Debes agregar los siguientes imports:
+
+      ```java
+      import org.everit.json.schema.loader.SchemaLoader;
+      import org.json.JSONArray;
+      import org.json.JSONObject;
+      import org.json.JSONTokener;
+      ```
+
+1. Finalmente, creas un branch y subes un PR con estos cambios.
