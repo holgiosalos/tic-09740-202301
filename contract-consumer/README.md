@@ -190,7 +190,7 @@ El ultimo paso de las pruebas de contrato del lado del consumidor es, publicar e
 1. Crea un archivo con nombre `publish.js` con el siguiente contenido, dentro de la carpeta `contract/config`:
 
    ```js
-   import { Publisher } from '@pact-foundation/pact';
+   import { Publisher } from '@pact-foundation/pact-core';
    import dotenv from 'dotenv';
 
    dotenv.config();
@@ -202,7 +202,7 @@ El ultimo paso de las pruebas de contrato del lado del consumidor es, publicar e
       pactFilesOrDirs: ['./test/contract/pacts']
    };
 
-   new Publisher(opts).publishPacts();
+   new Publisher(opts).publish();
    ```
 
 1. Configuramos el comando para publicar las pruebas de contrato, agregando la siguiente linea al conjunto de `scripts` dentro del archivo `package.json`:
