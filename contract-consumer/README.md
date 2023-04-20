@@ -12,8 +12,8 @@ Este ejercicio tiene como objetivo aprender a configurar y ejecutar pruebas de C
 1. Asegurate de tener instaladas las dependencias y de haber construido el codigo:
 
    ```bash
-   npm clean install
-   npm build
+   npm ci
+   npm run build
    ```
 
 ### 2. Configuracion Pact
