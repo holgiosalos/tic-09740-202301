@@ -169,6 +169,12 @@ Este ejercicio tiene como objetivo aprender a configurar y ejecutar pruebas de C
                   await provider.verify()
       ```
 
+1. Verifica que la prueba se ejecuta exitosamente:
+
+   ```bash
+   npm run test:contract
+   ```
+
 1. Hacer commit de los cambios, Crear un pull request (PR), y realizar el merge.
 
 1. Despues de fusionar los cambios, recuerde hacer `checkout` a la rama main y despues hacer `pull`.
