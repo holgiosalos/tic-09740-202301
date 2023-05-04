@@ -23,6 +23,11 @@ En este ejercicio, realizaremos pruebas unitarias enfocadas en el front-end y en
     npm i -D moxios
     ```
 
+1. Agregue el siguiente script en el archivo `package.json`:
+    ```json
+    "test:unit": "mocha test/unit/**/*.test.js",
+    ```
+
 1. Publique estos cambios:
     - Cree una rama llamada: moxios-setup
     - Haga commit y push de los cambios
